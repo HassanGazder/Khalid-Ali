@@ -4,6 +4,12 @@ node_modules/
 # Build output
 dist/
 
+# Large local media that should not be committed directly to GitHub
+public/reel1.mp4
+public/reel2.mp4
+public/reels3.mp4
+public/*.MOV
+
 # Vercel local metadata
 .vercel/
 

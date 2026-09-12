@@ -21,7 +21,7 @@ export default function Home() {
         title="Khalid Ali — Video Editor & Graphic Designer in Dubai"
         siteName="Khalid Ali"
         description="Dubai-based video editor and graphic designer crafting cinematic brand films, music videos, and social edits. Color grading, motion graphics, and sound design under one roof."
-        image="/hero-poster.jpg"
+        image="/Khalid.JPEG"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Person",

@@ -1,7 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
-export const VideoModal = ({ open, onClose, title, meta, description, tags }) => (
+export const VideoModal = ({
+  open,
+  onClose,
+  title,
+  meta,
+  description,
+  tags,
+  src = "/showreel-video.mp4",
+}) => (
   <AnimatePresence>
     {open && (
       <motion.div
@@ -33,12 +41,10 @@ export const VideoModal = ({ open, onClose, title, meta, description, tags }) =>
           </button>
           <video
             className="aspect-video w-full bg-black object-cover"
-            src="/showreel-video.mp4"
+            src={src}
             controls
-            autoPlay
-            muted
-            loop
             playsInline
+            preload="metadata"
           />
           <div className="p-6 sm:p-8">
             <div className="flex flex-wrap items-baseline justify-between gap-3">

@@ -1,8 +1,48 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play } from "lucide-react";
 import { PROJECTS, PROJECT_CATEGORIES } from "@/data/portfolio";
 import { VideoModal } from "@/components/VideoModal";
+
+function ProjectVideoCover({ project }) {
+  const videoRef = useRef(null);
+  const [ready, setReady] = useState(false);
+
+  const showPreviewFrame = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.pause();
+    setReady(true);
+  };
+
+  return (
+    <>
+      <div
+        className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+          ready ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      <video
+        ref={videoRef}
+        className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-700 ease-out group-hover:scale-105 ${
+          ready ? "opacity-100" : "opacity-0"
+        }`}
+        src={`${project.videoSrc}#t=1`}
+        muted
+        playsInline
+        preload="auto"
+        onLoadedMetadata={(e) => {
+          if (e.currentTarget.currentTime < 0.8) {
+            e.currentTarget.currentTime = 1;
+          }
+        }}
+        onLoadedData={showPreviewFrame}
+        onCanPlay={showPreviewFrame}
+      />
+    </>
+  );
+}
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
@@ -79,12 +119,16 @@ export default function Projects() {
                 onClick={() => setActive(project)}
                 className={`group relative col-span-1 block min-h-[280px] overflow-hidden border border-white/10 text-left transition-colors duration-500 hover:border-gold/40 ${project.aspect}`}
               >
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+                {project.videoSrc ? (
+                  <ProjectVideoCover project={project} />
+                ) : (
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/35 transition-colors duration-500 group-hover:bg-black/20" />
                 <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(to_top,rgba(10,10,11,0.92),transparent)]" />
 
@@ -120,6 +164,7 @@ export default function Projects() {
         meta={active ? `${active.client} · ${active.year}` : ""}
         description={active?.description}
         tags={active?.tags}
+        src={active?.videoSrc}
       />
     </section>
   );

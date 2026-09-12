@@ -48,8 +48,8 @@ export default function Hero({ onPlayReel, onContact }) {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.14]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
 
@@ -59,23 +59,24 @@ export default function Hero({ onPlayReel, onContact }) {
       data-testid="hero-section"
       className="relative flex min-h-screen flex-col justify-end overflow-hidden"
     >
-      <motion.div style={{ y: videoY, scale: videoScale }} className="absolute inset-0">
-        <video
-          className="h-full w-full object-cover"
-          src="/hero-video.mp4"
-          poster="/hero-poster.jpg"
-          autoPlay
-          muted
-          loop
-          playsInline
+      <motion.div
+        style={{ y: imageY, scale: imageScale }}
+        className="absolute inset-0 bg-black"
+      >
+        <img
+          className="hero-portrait-zoom h-full w-full object-cover object-[58%_35%]"
+          src="/Khalid.JPEG"
+          alt=""
+          aria-hidden="true"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(10,10,11,0.88),rgba(10,10,11,0.42)_44%,rgba(10,10,11,0.18)_72%,rgba(10,10,11,0.7))]" />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 35%, rgba(10,10,11,0.9) 100%)",
+            "radial-gradient(ellipse at 62% 36%, transparent 18%, rgba(10,10,11,0.42) 52%, rgba(10,10,11,0.92) 100%)",
         }}
       />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,#0A0A0B,transparent)]" />

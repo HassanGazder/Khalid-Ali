@@ -51,6 +51,7 @@ export const PROJECTS = [
     year: "2025",
     thumbnail:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    videoSrc: "/reel1.mp4",
     description:
       "A high-end cinematic commercial showcasing Dubai's architectural marvels with dynamic match cuts and custom sound design.",
     tags: ["Color Grading", "Visual Effects", "Sound Design"],
@@ -64,6 +65,7 @@ export const PROJECTS = [
     year: "2025",
     thumbnail:
       "https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    videoSrc: "/reel2.mp4",
     description:
       "High-octane fast cuts and sound design for an extreme sports showcase across social platforms.",
     tags: ["Fast Pacing", "Glitch FX", "Rhythm Sync"],
@@ -77,6 +79,7 @@ export const PROJECTS = [
     year: "2024",
     thumbnail:
       "https://images.unsplash.com/photo-1612548403247-aa2873e9422d?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    videoSrc: "/reels3.mp4",
     description:
       "Futuristic music video with 3D camera tracking, glowing neon typography, and audio-reactive pacing.",
     tags: ["Motion Graphics", "3D Tracking", "Music Sync"],

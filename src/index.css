@@ -116,3 +116,24 @@
 .pulse-dot {
   animation: pulse-dot 1.6s ease-in-out infinite;
 }
+
+@keyframes hero-portrait-zoom {
+  0% {
+    transform: scale(1.03) translate3d(0, 0, 0);
+    filter: saturate(0.92) contrast(1.04);
+  }
+  50% {
+    transform: scale(1.12) translate3d(-1.6%, -1.2%, 0);
+    filter: saturate(1.05) contrast(1.08);
+  }
+  100% {
+    transform: scale(1.08) translate3d(1.2%, 0.8%, 0);
+    filter: saturate(0.98) contrast(1.06);
+  }
+}
+
+.hero-portrait-zoom {
+  animation: hero-portrait-zoom 18s ease-in-out infinite alternate;
+  transform-origin: 58% 35%;
+  will-change: transform, filter;
+}
