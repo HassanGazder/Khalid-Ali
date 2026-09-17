@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Projects", hash: "#projects", testId: "nav-link-projects" },
   { label: "Manifesto", hash: "#manifesto", testId: "nav-link-manifesto" },
   { label: "Experience", hash: "#experience", testId: "nav-link-experience" },
+  { label: "Skills", hash: "#skills", testId: "nav-link-skills" },
   { label: "Services", hash: "#services", testId: "nav-link-services" },
 ];
 

@@ -1,7 +1,12 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { EXPERIENCE } from "@/data/portfolio";
 
 export default function Experience() {
+  const [expanded, setExpanded] = useState(false);
+  const visibleItems = expanded ? EXPERIENCE : EXPERIENCE.slice(0, 3);
+
   return (
     <section
       id="experience"
@@ -29,14 +34,16 @@ export default function Experience() {
         </motion.h2>
 
         <div className="mt-16 border-l border-white/10">
-          {EXPERIENCE.map((item, i) => (
+          <AnimatePresence initial={false}>
+          {visibleItems.map((item, i) => (
             <motion.div
-              key={item.period}
+              key={`${item.period}-${item.company}`}
               data-testid={`experience-item-${i}`}
               initial={{ opacity: 0, x: -28 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ opacity: 0, height: 0, paddingBottom: 0 }}
               className="group relative pb-14 pl-8 last:pb-0 sm:pl-12"
             >
               <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-crimson transition-colors duration-500 group-hover:bg-gold" />
@@ -54,7 +61,16 @@ export default function Experience() {
               </p>
             </motion.div>
           ))}
+          </AnimatePresence>
         </div>
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          className="group mt-12 inline-flex items-center gap-3 border border-gold/50 px-6 py-3 font-mono text-xs uppercase tracking-[0.22em] text-gold transition-colors duration-300 hover:bg-gold hover:text-black"
+        >
+          {expanded ? "Show less" : `View ${EXPERIENCE.length - 3} more roles`}
+          {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />}
+        </button>
       </div>
     </section>
   );

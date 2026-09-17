@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
-import { MapPin, Mail, MessageCircle, Clock, Loader2, Send } from "lucide-react";
+import { MapPin, Mail, MessageCircle, Linkedin, Loader2, Send } from "lucide-react";
 import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import { CONTACT_INFO, PROJECT_TYPES, BUDGETS } from "@/data/portfolio";
@@ -48,7 +48,7 @@ export default function Contact() {
     { icon: MapPin, label: "Studio", value: CONTACT_INFO.location, id: "info-location" },
     { icon: Mail, label: "Email", value: CONTACT_INFO.email, id: "info-email" },
     { icon: MessageCircle, label: "WhatsApp", value: CONTACT_INFO.whatsapp, id: "info-whatsapp" },
-    { icon: Clock, label: "Hours", value: CONTACT_INFO.hours, id: "info-hours" },
+    { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/khalik006", id: "info-linkedin" },
   ];
 
   return (

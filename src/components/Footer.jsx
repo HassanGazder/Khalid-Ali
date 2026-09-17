@@ -69,7 +69,9 @@ export default function Footer() {
               <a
                 key={id}
                 data-testid={id}
-                href={id === "social-email" ? `mailto:${CONTACT_INFO.email}` : "#"}
+                href={id === "social-email" ? `mailto:${CONTACT_INFO.email}` : id === "social-linkedin" ? CONTACT_INFO.linkedin : "#"}
+                target={id === "social-linkedin" ? "_blank" : undefined}
+                rel={id === "social-linkedin" ? "noreferrer" : undefined}
                 aria-label={label}
                 className="text-zinc-500 transition-colors duration-300 hover:text-gold"
               >

@@ -7,6 +7,8 @@ import Marquee from "@/components/Marquee";
 import Manifesto from "@/components/Manifesto";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Skills from "@/components/Skills";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import { VideoModal } from "@/components/VideoModal";
@@ -44,6 +46,8 @@ export default function Home() {
         <Manifesto />
         <Projects />
         <Experience />
+        <Education />
+        <Skills />
         <Services />
       </main>
       <Footer />
