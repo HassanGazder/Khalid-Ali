@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Instagram, Youtube, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Instagram, Youtube, Linkedin, Phone } from "lucide-react";
 import { CONTACT_INFO } from "@/data/portfolio";
 
 export default function Footer() {
@@ -71,22 +71,19 @@ export default function Footer() {
               { icon: Instagram, label: "Instagram", id: "social-instagram" },
               { icon: Youtube, label: "YouTube", id: "social-youtube" },
               { icon: Linkedin, label: "LinkedIn", id: "social-linkedin" },
-              { icon: Mail, label: "Email", id: "social-email" },
             ].map(({ icon: Icon, label, id }) => (
               <a
                 key={id}
                 data-testid={id}
                 href={
-                  id === "social-email"
-                    ? `mailto:${CONTACT_INFO.email}`
-                    : id === "social-linkedin"
+                  id === "social-linkedin"
                       ? CONTACT_INFO.linkedin
                       : id === "social-instagram"
                         ? CONTACT_INFO.instagram
                         : CONTACT_INFO.youtube
                 }
-                target={id === "social-email" ? undefined : "_blank"}
-                rel={id === "social-email" ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={label}
                 className="text-zinc-500 transition-colors duration-300 hover:text-gold"
               >

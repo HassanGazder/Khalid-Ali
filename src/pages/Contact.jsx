@@ -155,6 +155,22 @@ export default function Contact() {
                 />
               </div>
               <div>
+                <label htmlFor="phone" className={labelClasses}>
+                  Phone Number *
+                </label>
+                <input
+                  id="phone"
+                  data-testid="input-phone"
+                  type="tel"
+                  name="phone"
+                  required
+                  autoComplete="tel"
+                  placeholder="e.g. +971 50 123 4567"
+                  className={inputClasses}
+                />
+                <ValidationError prefix="Phone" field="phone" errors={state.errors} className="mt-2 block text-xs text-crimson" />
+              </div>
+              <div>
                 <label htmlFor="projectType" className={labelClasses}>
                   Project Type
                 </label>
