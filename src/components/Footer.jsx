@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Instagram, Youtube, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Instagram, Youtube, Linkedin, Mail, Phone } from "lucide-react";
 import { CONTACT_INFO } from "@/data/portfolio";
 
 export default function Footer() {
@@ -50,6 +50,13 @@ export default function Footer() {
             className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-700 underline decoration-gold/50 underline-offset-8 transition-colors duration-300 hover:text-amber-700"
           >
             {CONTACT_INFO.email}
+          </a>
+          <a
+            href={`tel:${CONTACT_INFO.whatsapp.replace(/\s/g, "")}`}
+            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-700 transition-colors duration-300 hover:text-amber-700"
+          >
+            <Phone className="h-4 w-4" />
+            {CONTACT_INFO.whatsapp}
           </a>
         </motion.div>
       </div>

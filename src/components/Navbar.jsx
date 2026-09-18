@@ -54,7 +54,7 @@ export default function Navbar() {
           onClick={goHome}
           className="group flex items-baseline gap-2 text-left"
         >
-          <span className="font-serif text-xl font-bold tracking-wide text-zinc-950 transition-colors duration-300 group-hover:text-gold">
+          <span className="font-serif text-xl font-bold tracking-wide text-black">
             KHALID ALI
           </span>
           <span className="font-mono text-[10px] tracking-[0.3em] text-gold">
@@ -68,7 +68,7 @@ export default function Navbar() {
               key={link.hash}
               data-testid={link.testId}
               onClick={() => goToHash(link.hash)}
-              className="group relative font-mono text-xs uppercase tracking-[0.2em] text-zinc-600 transition-colors duration-300 hover:text-zinc-950"
+              className="group relative font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors duration-300 hover:text-black"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-[width] duration-300 group-hover:w-full" />
@@ -80,7 +80,7 @@ export default function Navbar() {
               setOpen(false);
               navigate("/contact");
             }}
-            className="group flex items-center gap-1.5 border border-gold/60 px-5 py-2 font-mono text-xs uppercase tracking-[0.2em] text-gold transition-[background-color,color] duration-300 hover:bg-gold hover:text-black"
+            className="group flex items-center gap-1.5 border border-gold/60 px-5 py-2 font-mono text-xs uppercase tracking-[0.2em] text-black transition-[background-color,color] duration-300 hover:bg-gold hover:text-black"
           >
             Contact Us
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -112,7 +112,7 @@ export default function Navbar() {
                   key={link.hash}
                   data-testid={`mobile-${link.testId}`}
                   onClick={() => goToHash(link.hash)}
-                  className="py-3 text-left font-serif text-2xl text-zinc-800 transition-colors duration-300 hover:text-gold"
+                  className="py-3 text-left font-serif text-2xl text-black transition-colors duration-300 hover:text-black"
                 >
                   {link.label}
                 </button>
@@ -123,7 +123,7 @@ export default function Navbar() {
                   setOpen(false);
                   navigate("/contact");
                 }}
-                className="py-3 text-left font-serif text-2xl text-gold"
+                className="py-3 text-left font-serif text-2xl text-black"
               >
                 Contact Us
               </button>

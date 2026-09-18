@@ -1,19 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { toast } from "sonner";
-import { MapPin, Mail, MessageCircle, Linkedin, Loader2, Send } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
+import { MapPin, Mail, MessageCircle, Linkedin, Loader2, Send, CheckCircle2 } from "lucide-react";
 import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import { CONTACT_INFO, PROJECT_TYPES, BUDGETS } from "@/data/portfolio";
-
-const initialForm = {
-  fullName: "",
-  email: "",
-  company: "",
-  projectType: "",
-  budget: "",
-  message: "",
-};
 
 const inputClasses =
   "w-full border border-black/15 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-400 outline-none transition-[border-color,box-shadow] duration-300 focus:border-gold focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]";
@@ -22,27 +12,9 @@ const labelClasses =
   "mb-2 block font-mono text-[11px] uppercase tracking-[0.25em] text-gold";
 
 export default function Contact() {
-  const [form, setForm] = useState(initialForm);
-  const [sending, setSending] = useState(false);
+  const [state, submitToFormspree] = useForm("xbgllwrk");
 
-  const set = (key) => (e) =>
-    setForm((prev) => ({ ...prev, [key]: e.target.value }));
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.fullName.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error("Please fill in your name, email, and project details.");
-      return;
-    }
-    setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      setForm(initialForm);
-      toast.success(
-        "Enquiry received — Khalid will get back to you within 24 hours."
-      );
-    }, 900);
-  };
+  const handleSubmit = submitToFormspree;
 
   const infoItems = [
     { icon: MapPin, label: "Studio", value: CONTACT_INFO.location, id: "info-location" },
@@ -123,8 +95,21 @@ export default function Contact() {
             data-testid="contact-form"
             onSubmit={handleSubmit}
             className="border border-black/10 bg-white p-8 shadow-sm lg:col-span-7"
-            noValidate
           >
+            {state.succeeded ? (
+              <div className="flex min-h-[430px] flex-col items-center justify-center text-center" role="status">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/15 text-amber-700">
+                  <CheckCircle2 className="h-8 w-8" />
+                </span>
+                <h2 className="mt-6 font-serif text-3xl font-semibold text-zinc-950">
+                  Thank you for reaching out.
+                </h2>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-600">
+                  Your enquiry has been sent successfully. Khalid will get back to you within 24 hours.
+                </p>
+              </div>
+            ) : (
+              <>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label htmlFor="fullName" className={labelClasses}>
@@ -134,11 +119,12 @@ export default function Contact() {
                   id="fullName"
                   data-testid="input-full-name"
                   type="text"
-                  value={form.fullName}
-                  onChange={set("fullName")}
+                  name="fullName"
+                  required
                   placeholder="e.g. Sarah Al-Mansoor"
                   className={inputClasses}
                 />
+                <ValidationError prefix="Name" field="fullName" errors={state.errors} className="mt-2 block text-xs text-crimson" />
               </div>
               <div>
                 <label htmlFor="email" className={labelClasses}>
@@ -148,11 +134,12 @@ export default function Contact() {
                   id="email"
                   data-testid="input-email"
                   type="email"
-                  value={form.email}
-                  onChange={set("email")}
+                  name="email"
+                  required
                   placeholder="sarah@brand.com"
                   className={inputClasses}
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="mt-2 block text-xs text-crimson" />
               </div>
               <div>
                 <label htmlFor="company" className={labelClasses}>
@@ -162,8 +149,7 @@ export default function Contact() {
                   id="company"
                   data-testid="input-company"
                   type="text"
-                  value={form.company}
-                  onChange={set("company")}
+                  name="company"
                   placeholder="e.g. Red Bull ME / Agency"
                   className={inputClasses}
                 />
@@ -175,8 +161,8 @@ export default function Contact() {
                 <select
                   id="projectType"
                   data-testid="select-project-type"
-                  value={form.projectType}
-                  onChange={set("projectType")}
+                  name="projectType"
+                  defaultValue=""
                   className={`${inputClasses} appearance-none`}
                 >
                   <option value="" disabled>
@@ -196,8 +182,8 @@ export default function Contact() {
                 <select
                   id="budget"
                   data-testid="select-budget"
-                  value={form.budget}
-                  onChange={set("budget")}
+                  name="budget"
+                  defaultValue=""
                   className={`${inputClasses} appearance-none`}
                 >
                   <option value="" disabled>
@@ -218,21 +204,22 @@ export default function Contact() {
                   id="message"
                   data-testid="textarea-message"
                   rows={5}
-                  value={form.message}
-                  onChange={set("message")}
+                  name="message"
+                  required
                   placeholder="Tell us about your project goals, references, and delivery date..."
                   className={`${inputClasses} resize-none`}
                 />
+                <ValidationError prefix="Project details" field="message" errors={state.errors} className="mt-2 block text-xs text-crimson" />
               </div>
             </div>
 
             <button
               data-testid="submit-button"
               type="submit"
-              disabled={sending}
+              disabled={state.submitting}
               className="group mt-8 flex w-full items-center justify-center gap-3 bg-gold px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] text-black transition-[background-color,opacity] duration-300 hover:bg-gold-bright disabled:opacity-60 sm:w-auto"
             >
-              {sending ? (
+              {state.submitting ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
                   Sending...
@@ -244,6 +231,8 @@ export default function Contact() {
                 </>
               )}
             </button>
+              </>
+            )}
           </motion.form>
         </div>
       </main>

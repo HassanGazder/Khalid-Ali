@@ -1,5 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
+
+const getYoutubeId = (url = "") => {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([^?&/]+)/);
+  return match?.[1] ?? "";
+};
 
 export const VideoModal = ({
   open,
@@ -9,6 +14,7 @@ export const VideoModal = ({
   description,
   tags,
   src = "/showreel-video.mp4",
+  youtubeUrl,
 }) => (
   <AnimatePresence>
     {open && (
@@ -35,17 +41,27 @@ export const VideoModal = ({
             data-testid="modal-close-button"
             onClick={onClose}
             aria-label="Close"
-            className="absolute -top-11 right-0 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 transition-colors duration-300 hover:text-gold"
+            className="absolute -top-12 right-0 flex items-center gap-2 bg-white px-4 py-2 font-mono text-xs uppercase tracking-[0.2em] text-black transition-colors duration-300 hover:bg-gold hover:text-black"
           >
             Close <X className="h-4 w-4" />
           </button>
-          <video
-            className="aspect-video w-full bg-black object-cover"
-            src={src}
-            controls
-            playsInline
-            preload="metadata"
-          />
+          {youtubeUrl ? (
+            <iframe
+              className="aspect-video w-full bg-black"
+              src={`https://www.youtube.com/embed/${getYoutubeId(youtubeUrl)}?autoplay=1&rel=0`}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          ) : (
+            <video
+              className="aspect-video w-full bg-black object-cover"
+              src={src}
+              controls
+              playsInline
+              preload="metadata"
+            />
+          )}
           <div className="p-6 sm:p-8">
             <div className="flex flex-wrap items-baseline justify-between gap-3">
               <h3 className="font-serif text-2xl font-semibold text-white">
@@ -61,6 +77,16 @@ export const VideoModal = ({
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">
                 {description}
               </p>
+            )}
+            {youtubeUrl && (
+              <a
+                href={youtubeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center gap-2 bg-gold px-5 py-3 font-mono text-xs uppercase tracking-[0.18em] text-black transition-colors hover:bg-gold-bright"
+              >
+                Watch on YouTube <ArrowUpRight className="h-4 w-4" />
+              </a>
             )}
             {tags && (
               <div className="mt-5 flex flex-wrap gap-2">

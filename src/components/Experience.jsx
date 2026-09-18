@@ -66,7 +66,7 @@ export default function Experience() {
         <button
           type="button"
           onClick={() => setExpanded((value) => !value)}
-          className="group mt-12 inline-flex items-center gap-3 border border-gold/50 px-6 py-3 font-mono text-xs uppercase tracking-[0.22em] text-gold transition-colors duration-300 hover:bg-gold hover:text-black"
+          className="group mt-12 inline-flex items-center gap-3 border border-gold/50 px-6 py-3 font-mono text-xs uppercase tracking-[0.22em] text-black transition-colors duration-300 hover:bg-gold hover:text-black"
         >
           {expanded ? "Show less" : `View ${EXPERIENCE.length - 3} more roles`}
           {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />}
