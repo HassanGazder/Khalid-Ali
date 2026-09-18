@@ -61,7 +61,7 @@ export default function Hero({ onPlayReel, onContact }) {
     >
       <motion.div
         style={{ y: imageY, scale: imageScale }}
-        className="absolute inset-0 bg-black"
+        className="absolute inset-0 bg-white"
       >
         <img
           className="hero-portrait-zoom h-full w-full object-cover object-[58%_35%]"
@@ -70,16 +70,16 @@ export default function Hero({ onPlayReel, onContact }) {
           aria-hidden="true"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(10,10,11,0.88),rgba(10,10,11,0.42)_44%,rgba(10,10,11,0.18)_72%,rgba(10,10,11,0.7))]" />
+      <div className="absolute inset-0 bg-white/30" />
+      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(255,255,255,0.96),rgba(255,255,255,0.76)_44%,rgba(255,255,255,0.2)_72%,rgba(255,255,255,0.58))]" />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 62% 36%, transparent 18%, rgba(10,10,11,0.42) 52%, rgba(10,10,11,0.92) 100%)",
+            "radial-gradient(ellipse at 62% 36%, transparent 18%, rgba(255,255,255,0.18) 52%, rgba(255,255,255,0.78) 100%)",
         }}
       />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,#0A0A0B,transparent)]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,#ffffff,transparent)]" />
 
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
@@ -91,7 +91,7 @@ export default function Hero({ onPlayReel, onContact }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
             data-testid="hero-eyebrow"
-            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-gold"
+            className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.3em] text-amber-700"
           >
             <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-crimson" />
             Dubai-Based Video Editor & Graphic Designer
@@ -101,7 +101,7 @@ export default function Hero({ onPlayReel, onContact }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             data-testid="hero-timecode"
-            className="hidden items-center gap-2 border border-white/15 px-3 py-1 font-mono text-[11px] tracking-[0.2em] text-zinc-400 sm:flex"
+            className="hidden items-center gap-2 border border-black/15 bg-white/60 px-3 py-1 font-mono text-[11px] tracking-[0.2em] text-zinc-700 backdrop-blur-sm sm:flex"
           >
             <MapPin className="h-3 w-3 text-gold" />
             DXB {time} GST
@@ -112,14 +112,14 @@ export default function Hero({ onPlayReel, onContact }) {
           variants={lineContainer}
           initial="hidden"
           animate="show"
-          className="font-serif text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          className="font-serif text-4xl font-bold leading-[1.02] tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl"
         >
           {TITLE_LINES.map((line, i) => (
             <span key={line} className="block overflow-hidden pb-1">
               <motion.span variants={lineVariant} className="block">
                 {i === 1 ? (
                   <>
-                    STORIES <span className="italic text-gold">in</span> MOTION
+                    STORIES <span className="italic text-amber-700">in</span> MOTION
                   </>
                 ) : (
                   line
@@ -147,7 +147,7 @@ export default function Hero({ onPlayReel, onContact }) {
             <button
               data-testid="hero-contact-button"
               onClick={onContact}
-              className="group flex items-center gap-2 border border-white/25 px-7 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-white transition-[border-color,color] duration-300 hover:border-crimson hover:text-crimson"
+              className="group flex items-center gap-2 border border-zinc-900/30 bg-white/40 px-7 py-3.5 font-mono text-xs uppercase tracking-[0.2em] text-zinc-950 backdrop-blur-sm transition-[border-color,color,background-color] duration-300 hover:border-crimson hover:bg-white/75 hover:text-crimson"
             >
               Start a Project
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -161,10 +161,10 @@ export default function Hero({ onPlayReel, onContact }) {
               ["7", "Years in Post"],
             ].map(([value, label]) => (
               <div key={label}>
-                <div className="font-serif text-3xl font-bold text-gold sm:text-4xl">
+                <div className="font-serif text-3xl font-bold text-amber-700 sm:text-4xl">
                   {value}
                 </div>
-                <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-500">
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-700">
                   {label}
                 </div>
               </div>

@@ -1,3 +1,5 @@
+import { Instagram } from "lucide-react";
+
 export const scrollToId = (hash) => {
   const el = document.querySelector(hash);
   if (!el) return;
@@ -35,95 +37,17 @@ export const CHAPTERS = [
 ];
 
 export const PROJECT_CATEGORIES = [
-  "All",
-  "Brand Films",
-  "Music Videos",
-  "Social Edits",
-  "Visual Art",
+  "All", "Real Estate", "Commercial Shoots", "Portfolio",
 ];
 
 export const PROJECTS = [
-  {
-    id: "proj-1",
-    title: "Emirates Luxury Horizon",
-    category: "Brand Films",
-    client: "Emirates / Dubai Tourism",
-    year: "2025",
-    thumbnail:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-    videoSrc: "/reel1.mp4",
-    description:
-      "A high-end cinematic commercial showcasing Dubai's architectural marvels with dynamic match cuts and custom sound design.",
-    tags: ["Color Grading", "Visual Effects", "Sound Design"],
-    aspect: "md:col-span-8 md:row-span-2",
-  },
-  {
-    id: "proj-2",
-    title: "Neon Velocity — Red Bull DXB",
-    category: "Social Edits",
-    client: "Red Bull Middle East",
-    year: "2025",
-    thumbnail:
-      "https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    videoSrc: "/reel2.mp4",
-    description:
-      "High-octane fast cuts and sound design for an extreme sports showcase across social platforms.",
-    tags: ["Fast Pacing", "Glitch FX", "Rhythm Sync"],
-    aspect: "md:col-span-4",
-  },
-  {
-    id: "proj-3",
-    title: "Cyber Symphony",
-    category: "Music Videos",
-    client: "Sony Music ME",
-    year: "2024",
-    thumbnail:
-      "https://images.unsplash.com/photo-1612548403247-aa2873e9422d?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    videoSrc: "/reels3.mp4",
-    description:
-      "Futuristic music video with 3D camera tracking, glowing neon typography, and audio-reactive pacing.",
-    tags: ["Motion Graphics", "3D Tracking", "Music Sync"],
-    aspect: "md:col-span-4 md:row-span-2",
-  },
-  {
-    id: "proj-4",
-    title: "The Art of Precision",
-    category: "Visual Art",
-    client: "Khalid Ali Original",
-    year: "2024",
-    thumbnail:
-      "https://images.unsplash.com/photo-1490810194309-344b3661ba39?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    description:
-      "An editorial visual study exploring macro textures, film grain, and high-contrast color science.",
-    tags: ["35mm Film Grain", "Macro Cut", "Editorial"],
-    aspect: "md:col-span-4",
-  },
-  {
-    id: "proj-5",
-    title: "Emaar Real Estate Showcase",
-    category: "Brand Films",
-    client: "Emaar Properties",
-    year: "2024",
-    thumbnail:
-      "https://images.unsplash.com/photo-1543579596-2c11997c7706?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
-    description:
-      "Luxury penthouse promo with ultra-smooth drone transitions and warm golden-hour grading.",
-    tags: ["Drone Stitching", "Warm Grade", "Luxury"],
-    aspect: "md:col-span-4",
-  },
-  {
-    id: "proj-6",
-    title: "Midnight Drive — Porsche DXB",
-    category: "Social Edits",
-    client: "Porsche Middle East",
-    year: "2023",
-    thumbnail:
-      "https://images.unsplash.com/photo-1632187981988-40f3cbaeef5e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
-    description:
-      "Atmospheric nocturnal automotive film with sound design focused on engine revs and city ambience.",
-    tags: ["Automotive", "Sound Design", "Dark Grade"],
-    aspect: "md:col-span-8",
-  },
+  { id: "youtube-1", title: "Sobha Realty Sales Director", category: "Real Estate", client: "Sobha Realty", year: "2026", thumbnail: "https://i.ytimg.com/vi/br2zDQiwgSI/hqdefault.jpg", youtubeUrl: "https://youtu.be/br2zDQiwgSI", aspect: "md:col-span-8 md:row-span-2" },
+  { id: "youtube-2", title: "Dubai Real Estate Shoot", category: "Real Estate", client: "Sobha Realty", year: "2026", thumbnail: "https://i.ytimg.com/vi/ZwwJvhWuayU/hqdefault.jpg", youtubeUrl: "https://youtu.be/ZwwJvhWuayU", aspect: "md:col-span-4" },
+  { id: "youtube-3", title: "Sobha Realty Sales Manager", category: "Real Estate", client: "Dubai Production", year: "2026", thumbnail: "https://i.ytimg.com/vi/jySDnnyJj28/hqdefault.jpg", youtubeUrl: "https://youtu.be/jySDnnyJj28", aspect: "md:col-span-4" },
+  { id: "youtube-4", title: "Dubai Freelance Videographer", category: "Commercial Shoots", client: "Real Estate & Commercial", year: "2026", thumbnail: "https://i.ytimg.com/vi/9dqJEi9KBHc/hqdefault.jpg", youtubeUrl: "https://youtube.com/shorts/9dqJEi9KBHc?feature=share", aspect: "md:col-span-4 md:row-span-2" },
+  { id: "youtube-5", title: "Leos Development Premium Shoot", category: "Commercial Shoots", client: "Leos Development", year: "2026", thumbnail: "https://i.ytimg.com/vi/X6rM3-VnFjc/hqdefault.jpg", youtubeUrl: "https://youtube.com/shorts/X6rM3-VnFjc?feature=share", aspect: "md:col-span-4" },
+  { id: "youtube-6", title: "Real Estate Video Shoot", category: "Real Estate", client: "Dubai Freelance Production", year: "2026", thumbnail: "https://i.ytimg.com/vi/JMRpfvehtoI/hqdefault.jpg", youtubeUrl: "https://youtube.com/shorts/JMRpfvehtoI?feature=share", aspect: "md:col-span-6" },
+  { id: "youtube-7", title: "Videographer & Video Editor Portfolio", category: "Portfolio", client: "Khalik DXB", year: "2026", thumbnail: "https://i.ytimg.com/vi/KE8crNwAWDE/hqdefault.jpg", youtubeUrl: "https://youtube.com/shorts/KE8crNwAWDE?feature=share", aspect: "md:col-span-6" },
 ];
 
 export const EXPERIENCE = [
@@ -234,6 +158,8 @@ export const CONTACT_INFO = {
   email: "khalikali71@gmail.com",
   whatsapp: "+971 58 962 3558",
   linkedin: "https://www.linkedin.com/in/khalik006/",
+  instagram: "https://www.instagram.com/khalik.dxb?stkn=am05M2p3YXVseWll",
+  youtube: "https://www.youtube.com/@khalikdxb",
 };
 
 export const PROJECT_TYPES = [

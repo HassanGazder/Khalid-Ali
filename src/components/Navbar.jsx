@@ -6,7 +6,6 @@ import { scrollToId } from "@/data/portfolio";
 
 const NAV_LINKS = [
   { label: "Projects", hash: "#projects", testId: "nav-link-projects" },
-  { label: "Manifesto", hash: "#manifesto", testId: "nav-link-manifesto" },
   { label: "Experience", hash: "#experience", testId: "nav-link-experience" },
   { label: "Skills", hash: "#skills", testId: "nav-link-skills" },
   { label: "Services", hash: "#services", testId: "nav-link-services" },
@@ -45,8 +44,8 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-500 ${
         scrolled
-          ? "border-white/10 bg-black/60 backdrop-blur-xl"
-          : "border-transparent bg-transparent"
+          ? "border-black/10 bg-white/95 shadow-sm backdrop-blur-xl"
+          : "border-black/10 bg-white/95 backdrop-blur-xl"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -55,7 +54,7 @@ export default function Navbar() {
           onClick={goHome}
           className="group flex items-baseline gap-2 text-left"
         >
-          <span className="font-serif text-xl font-bold tracking-wide text-white transition-colors duration-300 group-hover:text-gold">
+          <span className="font-serif text-xl font-bold tracking-wide text-zinc-950 transition-colors duration-300 group-hover:text-gold">
             KHALID ALI
           </span>
           <span className="font-mono text-[10px] tracking-[0.3em] text-gold">
@@ -69,7 +68,7 @@ export default function Navbar() {
               key={link.hash}
               data-testid={link.testId}
               onClick={() => goToHash(link.hash)}
-              className="group relative font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 transition-colors duration-300 hover:text-white"
+              className="group relative font-mono text-xs uppercase tracking-[0.2em] text-zinc-600 transition-colors duration-300 hover:text-zinc-950"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-[width] duration-300 group-hover:w-full" />
@@ -91,7 +90,7 @@ export default function Navbar() {
         <button
           data-testid="nav-mobile-toggle"
           onClick={() => setOpen((v) => !v)}
-          className="text-white md:hidden"
+          className="text-zinc-950 md:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -105,7 +104,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-white/10 bg-black/90 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-black/10 bg-white/95 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-6">
               {NAV_LINKS.map((link) => (
@@ -113,7 +112,7 @@ export default function Navbar() {
                   key={link.hash}
                   data-testid={`mobile-${link.testId}`}
                   onClick={() => goToHash(link.hash)}
-                  className="py-3 text-left font-serif text-2xl text-zinc-300 transition-colors duration-300 hover:text-gold"
+                  className="py-3 text-left font-serif text-2xl text-zinc-800 transition-colors duration-300 hover:text-gold"
                 >
                   {link.label}
                 </button>

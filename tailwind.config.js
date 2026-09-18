@@ -41,7 +41,7 @@ export default {
           DEFAULT: "hsl(var(--popover) / <alpha-value>)",
           foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
         },
-        coal: "#101014",
+        coal: "#f0ece3",
         gold: {
           DEFAULT: "#d4af37",
           bright: "#f1d06a",

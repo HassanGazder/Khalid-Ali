@@ -29,7 +29,7 @@ export const VideoModal = ({
           animate={{ scale: 1, y: 0, opacity: 1 }}
           exit={{ scale: 0.96, y: 12, opacity: 0 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full max-w-4xl border border-white/10 bg-coal"
+          className="relative z-10 w-full max-w-4xl border border-white/10 bg-zinc-950"
         >
           <button
             data-testid="modal-close-button"

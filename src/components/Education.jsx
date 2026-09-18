@@ -8,16 +8,16 @@ export default function Education() {
   const visibleItems = expanded ? EDUCATION : EDUCATION.slice(0, 4);
 
   return (
-    <section id="education" className="border-y border-white/10 bg-coal py-20 sm:py-28">
+    <section id="education" className="border-y border-black/10 bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-mono text-xs uppercase tracking-[0.3em] text-gold">
           Education & Training
         </motion.p>
-        <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-4 max-w-2xl font-serif text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+        <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-4 max-w-2xl font-serif text-3xl font-bold text-zinc-950 sm:text-4xl lg:text-5xl">
           Built through <span className="italic text-gold">craft and study</span>
         </motion.h2>
 
-        <div className="mt-14 grid gap-px bg-white/10 md:grid-cols-2">
+        <div className="mt-14 grid gap-px bg-black/10 md:grid-cols-2">
           <AnimatePresence initial={false}>
             {visibleItems.map((item, index) => (
               <motion.article
@@ -27,13 +27,13 @@ export default function Education() {
                 exit={{ opacity: 0, scale: 0.98 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: (index % 4) * 0.07 }}
-                className="group bg-black p-7 transition-colors duration-300 hover:bg-zinc-950 sm:p-9"
+                className="group bg-[#faf8f2] p-7 transition-colors duration-300 hover:bg-[#f3eee4] sm:p-9"
               >
                 <div className="flex items-start justify-between gap-6">
                   <span className="font-mono text-[10px] tracking-[0.25em] text-zinc-600">0{index + 1}</span>
                   <BookOpen className="h-5 w-5 text-gold transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110" />
                 </div>
-                <h3 className="mt-8 font-serif text-2xl font-semibold text-white">{item.title}</h3>
+                <h3 className="mt-8 font-serif text-2xl font-semibold text-zinc-950">{item.title}</h3>
                 <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-gold">{item.institution}</p>
                 <p className="mt-2 text-sm text-zinc-500">{item.location}</p>
               </motion.article>

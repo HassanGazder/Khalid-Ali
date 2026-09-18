@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import Manifesto from "@/components/Manifesto";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -43,7 +42,6 @@ export default function Home() {
           onContact={() => navigate("/contact")}
         />
         <Marquee />
-        <Manifesto />
         <Projects />
         <Experience />
         <Education />

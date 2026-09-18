@@ -23,7 +23,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 max-w-4xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
+          className="mt-6 max-w-4xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-zinc-950 sm:text-6xl"
         >
           Let's cut something
           <br />
@@ -47,16 +47,16 @@ export default function Footer() {
           <a
             data-testid="footer-email-link"
             href={`mailto:${CONTACT_INFO.email}`}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 underline decoration-gold/50 underline-offset-8 transition-colors duration-300 hover:text-gold"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-700 underline decoration-gold/50 underline-offset-8 transition-colors duration-300 hover:text-amber-700"
           >
             {CONTACT_INFO.email}
           </a>
         </motion.div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-black/10">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-8 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-600">
+          <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-500">
             © 2026 KHALID ALI — DUBAI, UAE
           </p>
           <div className="flex gap-5">
@@ -69,9 +69,17 @@ export default function Footer() {
               <a
                 key={id}
                 data-testid={id}
-                href={id === "social-email" ? `mailto:${CONTACT_INFO.email}` : id === "social-linkedin" ? CONTACT_INFO.linkedin : "#"}
-                target={id === "social-linkedin" ? "_blank" : undefined}
-                rel={id === "social-linkedin" ? "noreferrer" : undefined}
+                href={
+                  id === "social-email"
+                    ? `mailto:${CONTACT_INFO.email}`
+                    : id === "social-linkedin"
+                      ? CONTACT_INFO.linkedin
+                      : id === "social-instagram"
+                        ? CONTACT_INFO.instagram
+                        : CONTACT_INFO.youtube
+                }
+                target={id === "social-email" ? undefined : "_blank"}
+                rel={id === "social-email" ? undefined : "noreferrer"}
                 aria-label={label}
                 className="text-zinc-500 transition-colors duration-300 hover:text-gold"
               >

@@ -16,7 +16,7 @@ const initialForm = {
 };
 
 const inputClasses =
-  "w-full border border-white/15 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition-[border-color] duration-300 focus:border-gold";
+  "w-full border border-black/15 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-400 outline-none transition-[border-color,box-shadow] duration-300 focus:border-gold focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]";
 
 const labelClasses =
   "mb-2 block font-mono text-[11px] uppercase tracking-[0.25em] text-gold";
@@ -73,7 +73,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
+          className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl"
         >
           Start a project <span className="italic text-gold">with Khalid</span>
         </motion.h1>
@@ -81,7 +81,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-5 max-w-xl text-base leading-relaxed text-zinc-400"
+          className="mt-5 max-w-xl text-base leading-relaxed text-zinc-700"
         >
           Based in Dubai, UAE — available for regional and remote worldwide
           projects. Tell me about your film and I'll reply within 24 hours.
@@ -94,8 +94,8 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="lg:col-span-5"
           >
-            <div className="border border-white/10 bg-coal p-8">
-              <h2 className="font-serif text-2xl font-semibold text-white">
+            <div className="border border-black/10 bg-white p-8 shadow-sm">
+              <h2 className="font-serif text-2xl font-semibold text-zinc-950">
                 Studio Details
               </h2>
               <div className="mt-8 space-y-7">
@@ -108,7 +108,7 @@ export default function Contact() {
                       <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-500">
                         {label}
                       </p>
-                      <p className="mt-1 text-sm text-zinc-200">{value}</p>
+                      <p className="mt-1 text-sm text-zinc-800">{value}</p>
                     </div>
                   </div>
                 ))}
@@ -122,7 +122,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.45 }}
             data-testid="contact-form"
             onSubmit={handleSubmit}
-            className="border border-white/10 bg-coal p-8 lg:col-span-7"
+            className="border border-black/10 bg-white p-8 shadow-sm lg:col-span-7"
             noValidate
           >
             <div className="grid gap-6 sm:grid-cols-2">
@@ -183,7 +183,7 @@ export default function Contact() {
                     Select a project type
                   </option>
                   {PROJECT_TYPES.map((t) => (
-                    <option key={t} value={t} className="bg-coal">
+                    <option key={t} value={t} className="bg-white">
                       {t}
                     </option>
                   ))}
@@ -204,7 +204,7 @@ export default function Contact() {
                     Select a budget range
                   </option>
                   {BUDGETS.map((b) => (
-                    <option key={b} value={b} className="bg-coal">
+                    <option key={b} value={b} className="bg-white">
                       {b}
                     </option>
                   ))}
