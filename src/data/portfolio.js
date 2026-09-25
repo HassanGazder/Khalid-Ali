@@ -50,6 +50,33 @@ export const PROJECTS = [
   { id: "youtube-7", title: "Videographer & Video Editor Portfolio", category: "Portfolio", client: "Khalik DXB", year: "2026", thumbnail: "https://i.ytimg.com/vi/KE8crNwAWDE/hqdefault.jpg", youtubeUrl: "https://youtube.com/shorts/KE8crNwAWDE?feature=share", aspect: "md:col-span-6" },
 ];
 
+const AI_VIDEO_DETAILS = [
+  ["givm_03ycDs", "Camera Movement"],
+  ["B3Ti6zpBXis", "Production Vision"],
+  ["V_OKMzKWu3w", "Cinematic Direction"],
+  ["dpVeStQEaKQ", "Perfect Timing"],
+  ["lx-C-eRZZp0", "Future Frames"],
+  ["L4Rc0lI6YFU", "Digital Dreamscape"],
+  ["YGzHkFlaYGQ", "Beyond Reality"],
+  ["JSgMKlglvXo", "Visual Metamorphosis"],
+  ["kx3qB_ZKL1s", "Synthetic Motion"],
+  ["STx8W2c_8Xk", "Parallel Worlds"],
+  ["YdUt5oV6FGc", "The New Perspective"],
+  ["g-C4xjt0-s4", "Cinematic Intelligence"],
+  ["BH5rkMhdbms", "Imagined in Motion"],
+  ["k44XyIhsNEk", "Generated Realities"],
+  ["ujH5X5p64so", "Tomorrow's Dubai"],
+  ["9txnNhz2qzc", "Crafted by AI"],
+];
+
+export const AI_VIDEOS = AI_VIDEO_DETAILS.map(([videoId, title], index) => ({
+  id: `ai-video-${index + 1}`,
+  title,
+  client: "AI Visual Production",
+  thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+  youtubeUrl: `https://youtu.be/${videoId}`,
+}));
+
 export const EXPERIENCE = [
   {
     period: "2026",
@@ -69,39 +96,6 @@ export const EXPERIENCE = [
     company: "HR Tech | Dubai, UAE",
     details: "Created event branding, social media designs, and digital marketing assets using Photoshop, Illustrator, CorelDRAW, and AI tools.",
   },
-  {
-    period: "2022 - 2024",
-    role: "Video & Audio Editor",
-    company: "High Street Cars | New Delhi, India",
-    details: "Shot, edited, and published regular video content for the High Street Cars YouTube and Instagram channels.",
-  },
-  {
-    period: "2022 - 2024",
-    role: "Social Media Handler / Designer",
-    company: "High Street Cars | New Delhi, India",
-    details: "Managed daily social media publishing and designed content to strengthen engagement and brand visibility.",
-  },
-  {
-    period: "2020 - 2022",
-    role: "Graphic Designer & Photographer",
-    company: "Ciliary Healthcare | Himachal Pradesh, India",
-    details: "Designed pharmaceutical packaging and product visuals, contributing to a 25% improvement in product visibility.",
-  },
-  {
-    period: "2019 - 2020",
-    role: "Graphic Designer & Logo Maker",
-    company: "Chardikala Printing Press | Himachal Pradesh, India",
-    details: "Developed logos, print graphics, and compelling brand materials that helped improve client engagement.",
-  },
-];
-
-export const EDUCATION = [
-  { title: "BA in Digital Arts", institution: "Himalayan University", location: "Himachal Pradesh, India" },
-  { title: "Diploma in Videography & Editing", institution: "Professional Training", location: "New Delhi, India" },
-  { title: "Graphic Designing", institution: "Professional Training", location: "Delhi, India" },
-  { title: "Web Designing & Development", institution: "Professional Training", location: "Delhi, India" },
-  { title: "SEO (Search Engine Optimization)", institution: "Professional Training", location: "Delhi, India" },
-  { title: "Ethical Hacking", institution: "Professional Training", location: "Chandigarh, India" },
 ];
 
 export const SKILLS = [

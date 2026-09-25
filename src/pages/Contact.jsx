@@ -32,34 +32,49 @@ export default function Contact() {
       />
       <Navbar />
 
-      <main className="mx-auto max-w-7xl px-4 pb-24 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+      <section className="relative flex min-h-[72vh] items-end overflow-hidden bg-black pt-24">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="/Khalid.JPEG"
+            alt="Khalid Ali, Dubai-based video editor and photographer"
+            className="contact-portrait-zoom h-full w-full object-cover object-[58%_34%]"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,6,0.9),rgba(5,5,6,0.58)_48%,rgba(5,5,6,0.18)_78%,rgba(5,5,6,0.48))]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="font-mono text-xs uppercase tracking-[0.3em] text-gold"
         >
-          Contact
+          Let&apos;s Create Something Memorable
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 max-w-3xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl"
+          className="mt-4 max-w-2xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Start a project <span className="italic text-gold">with Khalid</span>
+          Bring your next story <span className="italic text-gold">into focus.</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-5 max-w-xl text-base leading-relaxed text-zinc-700"
+          className="mt-5 max-w-xl text-base leading-relaxed text-zinc-200"
         >
           Based in Dubai, UAE — available for regional and remote worldwide
           projects. Tell me about your film and I'll reply within 24 hours.
         </motion.p>
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-12">
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

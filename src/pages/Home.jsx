@@ -3,8 +3,8 @@ import Seo from "@/components/Seo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import AIVideos from "@/components/AIVideos";
 import Experience from "@/components/Experience";
-import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
@@ -37,8 +37,8 @@ export default function Home() {
           onContact={() => navigate("/contact")}
         />
         <Projects />
+        <AIVideos />
         <Experience />
-        <Education />
         <Skills />
         <Services />
       </main>

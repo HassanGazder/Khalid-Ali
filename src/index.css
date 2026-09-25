@@ -132,8 +132,40 @@
   }
 }
 
-.hero-portrait-zoom {
+.hero-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.section-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 177.78vh);
+  height: max(100%, 56.25vw);
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.contact-portrait-zoom {
   animation: hero-portrait-zoom 18s ease-in-out infinite alternate;
-  transform-origin: 58% 35%;
+  transform-origin: 58% 34%;
   will-change: transform, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-portrait-zoom {
+    animation: none;
+  }
 }

@@ -63,10 +63,13 @@ export default function Hero({ onContact }) {
         style={{ y: imageY, scale: imageScale }}
         className="absolute inset-0 bg-black"
       >
-        <img
-          className="hero-portrait-zoom h-full w-full object-cover object-[58%_35%]"
-          src="/Khalid.JPEG"
-          alt=""
+        <iframe
+          className="hero-background-video"
+          src="https://www.youtube.com/embed/ujH5X5p64so?autoplay=1&mute=1&loop=1&playlist=ujH5X5p64so&controls=0&playsinline=1&rel=0&disablekb=1&fs=0"
+          title="Khalid Ali cinematic showreel"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
+          tabIndex="-1"
           aria-hidden="true"
         />
       </motion.div>
@@ -157,9 +160,9 @@ export default function Hero({ onContact }) {
 
           <div data-testid="hero-stats" className="flex gap-10">
             {[
-              ["120+", "Video Projects"],
-              ["40+", "Brands"],
-              ["7", "Years in Post"],
+              ["800+", "Videos Projects"],
+              ["10+", "Companies Worked With"],
+              ["7+", "Years in Post"],
             ].map(([value, label]) => (
               <div key={label}>
                 <div className="font-serif text-3xl font-bold text-gold sm:text-4xl">

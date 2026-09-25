@@ -3,7 +3,7 @@ import { SKILLS } from "@/data/portfolio";
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
+    <section id="skills" className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute right-0 top-0 font-serif text-[13rem] leading-none text-black/[0.035]">S</div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-mono text-xs uppercase tracking-[0.3em] text-gold">
