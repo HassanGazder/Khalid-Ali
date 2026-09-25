@@ -65,9 +65,9 @@ export default function Hero({ onContact }) {
       >
         <iframe
           className="hero-background-video"
-          src="https://www.youtube.com/embed/ujH5X5p64so?autoplay=1&mute=1&loop=1&playlist=ujH5X5p64so&controls=0&playsinline=1&rel=0&disablekb=1&fs=0"
+          src="https://player.mux.com/vgdqm01eiIyuH2GxjYPCSVqzIAFArO01npal83cXj33P00?autoplay=muted&muted=true&loop=true&controls=false&playsinline=true"
           title="Khalid Ali cinematic showreel"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           tabIndex="-1"
           aria-hidden="true"

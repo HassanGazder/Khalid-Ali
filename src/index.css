@@ -158,6 +158,10 @@
   transform: translate(-50%, -50%);
 }
 
+.experience-background-video {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 .contact-portrait-zoom {
   animation: hero-portrait-zoom 18s ease-in-out infinite alternate;
   transform-origin: 58% 34%;

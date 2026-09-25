@@ -21,17 +21,17 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" data-testid="projects-section" className="relative bg-white py-20 sm:py-28 lg:py-36">
+    <section id="projects" data-testid="projects-section" className="relative bg-zinc-950 py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <motion.p initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="font-mono text-xs uppercase tracking-[0.3em] text-gold">Selected Works</motion.p>
-            <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: 0.1 }} className="mt-4 font-serif text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl lg:text-5xl">Trending Reels</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: 0.1 }} className="mt-4 font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Trending Reels</motion.h2>
           </div>
 
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: 0.2 }} className="flex flex-wrap gap-2">
             {PROJECT_CATEGORIES.map((category) => (
-              <button key={category} type="button" onClick={() => changeFilter(category)} className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-[background-color,color,border-color] duration-300 ${filter === category ? "border-gold bg-gold text-black" : "border-black/15 text-black hover:border-gold/70 hover:bg-gold hover:text-black"}`}>{category}</button>
+              <button key={category} type="button" onClick={() => changeFilter(category)} className={`border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-[background-color,color,border-color] duration-300 ${filter === category ? "border-gold bg-gold text-black" : "border-white/20 text-white hover:border-gold/70 hover:bg-gold hover:text-black"}`}>{category}</button>
             ))}
           </motion.div>
         </div>
@@ -49,7 +49,7 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.97 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative col-span-1 block h-[320px] overflow-hidden border border-black/10 text-left transition-colors duration-500 hover:border-gold/60 sm:h-[380px] ${cardLayout(project)}`}
+                className={`group relative col-span-1 block h-[320px] overflow-hidden border border-white/10 text-left transition-colors duration-500 hover:border-gold/60 sm:h-[380px] ${cardLayout(project)}`}
               >
                 <img src={project.thumbnail} alt={`${project.title} YouTube thumbnail`} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                 <span className="absolute inset-0 bg-black/35 transition-colors duration-500 group-hover:bg-black/20" />

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import { Toaster } from "@/components/ui/sonner";
 import CustomCursor from "@/components/CustomCursor";
+import BackToTop from "@/components/BackToTop";
 import Home from "@/pages/Home";
 import Contact from "@/pages/Contact";
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <BackToTop />
       </BrowserRouter>
       <Toaster theme="dark" position="bottom-right" />
     </div>

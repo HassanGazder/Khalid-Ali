@@ -10,10 +10,10 @@ export default function Experience() {
     >
       <div className="absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
         <iframe
-          className="section-background-video"
-          src="https://www.youtube.com/embed/9txnNhz2qzc?autoplay=1&mute=1&loop=1&playlist=9txnNhz2qzc&controls=0&playsinline=1&rel=0&disablekb=1&fs=0"
+          className="section-background-video experience-background-video"
+          src="https://player.mux.com/7P202Ix1ymYnp7GJAVWbJ58Qw7KxdEVT3A024Twijal4c?autoplay=muted&muted=true&loop=true&controls=false&playsinline=true"
           title="Khalid Ali experience showreel background"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           tabIndex="-1"
         />
