@@ -8,7 +8,7 @@ export default function AIVideos() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
-    <section className="relative bg-zinc-950 py-20 sm:py-24 lg:py-28">
+    <section className="relative bg-zinc-950 pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
@@ -19,8 +19,17 @@ export default function AIVideos() {
         >
           AI <span className="italic text-gold">Edits</span>
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base"
+        >
+          Concept-driven visuals created with AI, cinematic direction and precise post-production to turn imaginative ideas into striking motion.
+        </motion.p>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {AI_VIDEOS.map((video, index) => (
             <motion.button
               type="button"

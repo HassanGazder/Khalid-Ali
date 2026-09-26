@@ -21,7 +21,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" data-testid="projects-section" className="relative bg-zinc-950 py-20 sm:py-28 lg:py-36">
+    <section id="projects" data-testid="projects-section" className="relative bg-zinc-950 pb-10 pt-20 sm:pb-12 sm:pt-28 lg:pb-14 lg:pt-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>

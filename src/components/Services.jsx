@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Clapperboard, Scissors, Star, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const PACKAGES = [
   {
@@ -63,11 +64,13 @@ const PACKAGES = [
 ];
 
 export default function Services() {
+  const navigate = useNavigate();
+
   return (
     <section
       id="services"
       data-testid="services-section"
-      className="relative overflow-hidden bg-[#f8f5ee] py-20 sm:py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#07090c] pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <motion.p
@@ -83,7 +86,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mx-auto mt-4 max-w-3xl text-center font-serif text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl lg:text-5xl"
+          className="mx-auto mt-4 max-w-3xl text-center font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
           Choose your level of <span className="italic text-gold">creative support.</span>
         </motion.h2>
@@ -190,8 +193,9 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <a
-                  href="/contact"
+                <button
+                  type="button"
+                  onClick={() => navigate("/contact")}
                   className={`group mt-auto flex w-full items-center justify-center gap-3 rounded-full px-5 py-4 font-mono text-[11px] uppercase tracking-[0.2em] transition-[background-color,transform] duration-300 hover:-translate-y-0.5 ${
                     servicePackage.featured
                       ? "bg-gold text-black hover:bg-gold-bright"
@@ -200,7 +204,7 @@ export default function Services() {
                 >
                   Discuss this package
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
+                </button>
               </motion.article>
             );
           })}

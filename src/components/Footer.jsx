@@ -7,8 +7,8 @@ export default function Footer() {
   const navigate = useNavigate();
 
   return (
-    <footer data-testid="footer-section" className="relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <footer data-testid="footer-section" className="relative overflow-hidden bg-[#07090c] text-white">
+      <div className="mx-auto max-w-7xl px-4 pb-24 pt-8 sm:px-6 sm:pb-32 sm:pt-10 lg:px-8 lg:pt-12">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 max-w-4xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-zinc-950 sm:text-6xl"
+          className="mt-6 max-w-4xl font-serif text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
         >
           Let's cut something
           <br />
@@ -47,13 +47,13 @@ export default function Footer() {
           <a
             data-testid="footer-email-link"
             href={`mailto:${CONTACT_INFO.email}`}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-700 underline decoration-gold/50 underline-offset-8 transition-colors duration-300 hover:text-amber-700"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-300 underline decoration-gold/50 underline-offset-8 transition-colors duration-300 hover:text-gold"
           >
             {CONTACT_INFO.email}
           </a>
           <a
             href={`tel:${CONTACT_INFO.whatsapp.replace(/\s/g, "")}`}
-            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-700 transition-colors duration-300 hover:text-amber-700"
+            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-300 transition-colors duration-300 hover:text-gold"
           >
             <Phone className="h-4 w-4" />
             {CONTACT_INFO.whatsapp}
@@ -61,7 +61,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="border-t border-black/10">
+      <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-8 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <p className="font-mono text-[11px] tracking-[0.2em] text-zinc-500">
             © 2026 KHALID ALI — DUBAI, UAE

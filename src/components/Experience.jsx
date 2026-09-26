@@ -6,7 +6,7 @@ export default function Experience() {
     <section
       id="experience"
       data-testid="experience-section"
-      className="relative isolate overflow-hidden bg-black pb-14 pt-20 sm:pb-16 sm:pt-28 lg:pb-20 lg:pt-32"
+      className="relative isolate overflow-hidden bg-black pb-10 pt-8 sm:pb-12 sm:pt-10 lg:pb-14 lg:pt-12"
     >
       <div className="absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
         <iframe
