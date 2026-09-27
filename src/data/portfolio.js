@@ -70,6 +70,7 @@ const AI_VIDEO_DETAILS = [
   ["k44XyIhsNEk", "Generated Realities"],
   ["ujH5X5p64so", "Tomorrow's Dubai"],
   ["9txnNhz2qzc", "Crafted by AI"],
+  ["dXNZi6A2lx0", "A New Dimension"],
 ];
 
 export const AI_VIDEOS = AI_VIDEO_DETAILS.map(([videoId, title], index) => ({
